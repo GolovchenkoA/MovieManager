@@ -1,0 +1,10 @@
+<hibernate-mapping>
+    <class name="com.madhusudhan.jh.domain.Movie_" table="MOVIES">
+        <id name="id" column="ID">
+            <generator class="native"/>
+        </id>
+        <property name="title" column="TITLE"/>
+        <property name="director" column="DIRECTOR"/>
+        <property name="synopsis" column="SYNOPSIS"/>
+    </class>
+</hibernate-mapping>
