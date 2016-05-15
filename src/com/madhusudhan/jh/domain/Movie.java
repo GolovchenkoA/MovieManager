@@ -5,7 +5,7 @@ package com.madhusudhan.jh.domain;
  */
 public class Movie {
     private int id;
-    private String title;
+    private String title = "notitle";
     private String director;
     private String synopsis;
 
@@ -63,5 +63,11 @@ public class Movie {
         result = 31 * result + (director != null ? director.hashCode() : 0);
         result = 31 * result + (synopsis != null ? synopsis.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        //return super.toString();
+        return getId() + "," + getTitle() + "," + getDirector() + "," + getSynopsis();
     }
 }

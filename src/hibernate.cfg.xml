@@ -9,8 +9,8 @@
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="connection.username">root</property>
         <property name="connection.password">Fzy84C</property>
+        <property name="hbm2ddl.auto">update</property> <!--Для автоматической генерации таблиц в бД -->
         <mapping resource="com/madhusudhan/jh/domain/Movie.xml"/>
-        <!--property name="hibernate.hbm2ddl.auto">create</property-->
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>

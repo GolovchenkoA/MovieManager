@@ -1,3 +1,5 @@
+import com.madhusudhan.jh.domain.BasicMovieManager;
+import com.madhusudhan.jh.domain.Movie;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;
@@ -13,7 +15,7 @@ import java.util.Map;
  * Created by головченко on 14.05.2016.
  */
 public class Main {
-    private static final SessionFactory ourSessionFactory;
+/*    private static final SessionFactory ourSessionFactory;
     private static final ServiceRegistry serviceRegistry;
 
     static {
@@ -30,9 +32,9 @@ public class Main {
 
     public static Session getSession() throws HibernateException {
         return ourSessionFactory.openSession();
-    }
+    }*/
 
-    public static void main(final String[] args) throws Exception {
+/*    public static void main(final String[] args) throws Exception {
         final Session session = getSession();
         try {
             System.out.println("querying all the managed entities...");
@@ -49,5 +51,21 @@ public class Main {
         } finally {
             session.close();
         }
+    }*/
+
+    public static void main(String[] args) {
+        BasicMovieManager movieManager = new BasicMovieManager();
+
+            // Сохранить сущность
+/*            Movie movie = new Movie();
+            //movie.setTitle("title2");
+            movie.setDirector("DirectorFIO");
+            movie.setSynopsis("movie describe");
+
+            movieManager.persistMovie(movie);*/
+
+        movieManager.findMovie(2);
+        movieManager.findAll();
+
     }
 }

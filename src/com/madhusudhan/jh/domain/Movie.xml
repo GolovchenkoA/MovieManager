@@ -6,7 +6,9 @@
 
     <class name="com.madhusudhan.jh.domain.Movie" table="movies" schema="" catalog="movie_1">
         <id name="id" column="ID"/>
-        <property name="title" column="TITLE"/>
+        <property name="title">
+            <column name="TITLE" not-null="true"/>
+        </property>
         <property name="director" column="DIRECTOR"/>
         <property name="synopsis" column="SYNOPSIS"/>
     </class>
