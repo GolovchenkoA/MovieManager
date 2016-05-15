@@ -1,5 +1,7 @@
-CREATE SCHEMA `movie_1` ;
+/* CREATE SCHEMA `movie_1` ; */
 
+CREATE DATABASE  IF NOT EXISTS `movie_1` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `movie_1`;
 
 CREATE TABLE movie_1.MOVIES
 (
@@ -8,3 +10,11 @@ CREATE TABLE movie_1.MOVIES
     DIRECTOR VARCHAR(60) DEFAULT "no director" NOT NULL,
     SYNOPSIS VARCHAR(255) DEFAULT "no synopsis" NOT NULL
 );
+
+
+
+CREATE TABLE `trades` (
+  `tradeId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `quantity` double NOT NULL,
+  `security` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`tradeId`)

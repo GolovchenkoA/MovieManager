@@ -1,7 +1,6 @@
-import com.madhusudhan.jh.domain.BasicMovieManager;
-import com.madhusudhan.jh.domain.BasicTradeManager;
-import com.madhusudhan.jh.domain.Movie;
-import com.madhusudhan.jh.domain.Trade;
+import com.madhusudhan.jh.domain.*;
+import com.madhusudhan.jh.domain.showroom.Car;
+import com.madhusudhan.jh.domain.showroom.Showroom;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;
@@ -11,6 +10,8 @@ import org.hibernate.metadata.ClassMetadata;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -56,7 +57,10 @@ public class Main {
     }*/
 
     public static void main(String[] args) {
-        BasicMovieManager movieManager = new BasicMovieManager();
+
+
+        ////////////////////////////////////////////////////////
+        //BasicMovieManager movieManager = new BasicMovieManager();
 
             // Сохранить сущность
 /*            Movie movie = new Movie();
@@ -70,14 +74,49 @@ public class Main {
 /*       movieManager.findMovie(2);
         movieManager.findAll();*/
 
+        ///////////////////////////////////////////////////////////////
 /*
         // Сохранить сущность Trade
+        BasicTradeManager tradeManager = new BasicTradeManager();
         Trade trade = new Trade();
         trade.setQuantity(2);
 
-        BasicTradeManager tradeManager = new BasicTradeManager();
-        tradeManager.persistTrade(trade);*/
+        tradeManager.persistTrade(trade);
+*/
 
+        //////////////////////////////////////////////////////////
+ /*       // Создаем новый курс (составной Primary Key)
+       BasicCourseManager courseManager = new BasicCourseManager();
+
+        Course course = new Course();
+        CoursePK coursePk = new CoursePK();
+        coursePk.setTitle("Computer Science");
+        coursePk.setTutor("Prof. Harry Barry");
+        course.setId(coursePk);
+        course.setTotalStudents(20);
+        course.setRegisteredStudents(12);
+        courseManager.persist(course);
+
+
+        // Находим все курсы
+        courseManager.findAll();
+*/
+
+        //  Showromm Entity
+        Showroom showroom = new Showroom();
+        List<Car> cars = new LinkedList<>();
+
+        cars.add(new Car("BMW","black"));
+        cars.add(new Car("BMW","red"));
+        showroom.setCars(cars);
+        showroom.setManager("Иннокентий");
+        showroom.setLocation("Русь");
+
+
+        Session session = com.madhusudhan.jh.domain.SessionFactory.getSession();
+        session.beginTransaction();
+        session.save(showroom);
+        session.getTransaction().commit();
 
 
     }

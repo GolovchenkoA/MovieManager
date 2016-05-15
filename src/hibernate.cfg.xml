@@ -15,5 +15,11 @@
         <property name="hbm2ddl.auto">update</property>
 
         <mapping resource="com/madhusudhan/jh/domain/Movie.hbm.xml"/>
+        <mapping class="com.madhusudhan.jh.domain.Trade"/>
+        <mapping class="com.madhusudhan.jh.domain.CoursePK"/>
+        <mapping class="com.madhusudhan.jh.domain.Course"/>
+        <mapping class="com.madhusudhan.jh.domain.showroom.Car"/>
+        <mapping class="com.madhusudhan.jh.domain.showroom.Showroom"/>
+        <!-- Сущность описана через аннотации -->
     </session-factory>
 </hibernate-configuration>

@@ -16,7 +16,8 @@ public class SessionFactory {
     static {
         try {
             Configuration configuration = new Configuration();
-            configuration.addAnnotatedClass(Trade.class); // Сущность которая описана через аннотации, а не hbm.xml
+            // Добавил через файл hibernate.cfg.xml   // Сущность которая описана через аннотации, а не hbm.xml
+            //configuration.addAnnotatedClass(Trade.class);
             configuration.configure();
 
 /*

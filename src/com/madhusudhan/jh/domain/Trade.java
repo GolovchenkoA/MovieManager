@@ -1,9 +1,6 @@
 package com.madhusudhan.jh.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Table;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by головченко on 15.05.2016.
@@ -17,6 +14,7 @@ public class Trade {
 
     @Id
     @GeneratedValue
+    @Column(name="tradeId",unique = true)
     public long getTradeId() {
         return tradeId;
     }
@@ -25,6 +23,7 @@ public class Trade {
         this.tradeId = tradeId;
     }
 
+    @Column(name="quantity",nullable = false)
     public double getQuantity() {
         return quantity;
     }
