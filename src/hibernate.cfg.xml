@@ -9,9 +9,11 @@
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="connection.username">root</property>
         <property name="connection.password">Fzy84C</property>
-        <property name="hbm2ddl.auto">update</property> <!--Для автоматической генерации таблиц в бД -->
-        <mapping resource="com/madhusudhan/jh/domain/Movie.xml"/>
-        <!-- DB schema will be updated if needed -->
-        <!-- <property name="hbm2ddl.auto">update</property> -->
+        <property name="hibernate.cglib.use_reflection_optimizer">true</property> <!--The application may be slower at startup if this is enabled, but with faster runtime performance.-->
+
+        <!--Для автоматической генерации таблиц в БД (не для продакшна) -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <mapping resource="com/madhusudhan/jh/domain/Movie.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

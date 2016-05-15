@@ -16,7 +16,18 @@ public class SessionFactory {
     static {
         try {
             Configuration configuration = new Configuration();
+            configuration.addAnnotatedClass(Trade.class); // Сущность которая описана через аннотации, а не hbm.xml
             configuration.configure();
+
+/*
+            // Установка параметров вместо файла ibernate.cfg.xml
+            Configuration configuration = new Configuration();
+            configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.DerbyDialect")
+            configuration.setProperty("hibernate.connection.username", user);
+            configuration.setProperty("hibernate.connection.password", password);
+            configuration.setProperty("hibernate.connection.url", "org.hibernate.dialect.MySQL5Dialect");
+            configuration.setProperty("hibernate.order_updates", "true");
+*/
 
             serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
             ourSessionFactory = configuration.buildSessionFactory(serviceRegistry);

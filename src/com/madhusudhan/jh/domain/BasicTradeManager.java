@@ -8,28 +8,28 @@ import java.util.List;
 /**
  * Created by головченко on 15.05.2016.
  */
-public class BasicMovieManager {
-    public void persistMovie(Movie movie) {
+public class BasicTradeManager {
+
+    public void persistTrade(Trade trade) {
         Session session = com.madhusudhan.jh.domain.SessionFactory.getSession();
         session.beginTransaction();
-        session.save(movie);
+        session.save(trade);
         session.getTransaction().commit();
     }
 
-    public void findMovie(int movieId) {
+    public void findTrade(int tradeId) {
         Session session = com.madhusudhan.jh.domain.SessionFactory.getSession();
         session.beginTransaction();
-        Movie movie = (Movie)session.load(Movie.class, movieId);
-        System.out.println("Movie:"+movie);
+        Trade trade = (Trade)session.load(Trade.class, tradeId);
+        System.out.println("Trade:"+trade);
         session.getTransaction().commit();
     }
 
     public void findAll(){
         Session session = SessionFactory.getSession();
         session.beginTransaction();
-        List<Movie> movies = session.createQuery("from Movie").list();
+        List<Trade> trades = session.createQuery("from Trade").list();
         session.getTransaction().commit();
-        System.out.println("All Movies:"+movies);
+        System.out.println("All Trades:"+trades);
     }
 }
-

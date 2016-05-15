@@ -1,5 +1,7 @@
 import com.madhusudhan.jh.domain.BasicMovieManager;
+import com.madhusudhan.jh.domain.BasicTradeManager;
 import com.madhusudhan.jh.domain.Movie;
+import com.madhusudhan.jh.domain.Trade;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;
@@ -64,8 +66,19 @@ public class Main {
 
             movieManager.persistMovie(movie);*/
 
-        movieManager.findMovie(2);
-        movieManager.findAll();
+        // Чтение сущности Movie
+/*       movieManager.findMovie(2);
+        movieManager.findAll();*/
+
+/*
+        // Сохранить сущность Trade
+        Trade trade = new Trade();
+        trade.setQuantity(2);
+
+        BasicTradeManager tradeManager = new BasicTradeManager();
+        tradeManager.persistTrade(trade);*/
+
+
 
     }
 }
